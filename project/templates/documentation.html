@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block landing_info %}
+
+<div class="documentation">
+    <div class="doc__content">
+        <div class="doc__tutorial">
+            <h1>How to use DataIRL:</h1>
+            <h2><u>1. Download one of template QSFs linked below.</u></h2><br>
+            <p>Currently, only template surveys for CX Customer Care, CX Digital Experience, EX Candidate Experience, EX Employee Experience are available. The plan is to create more template surveys compatible with the tool based on need/interest.</p>
+            <div class="download__files">
+                <button class="download__btn"><a href="{{ url_for('download_cx_cust_care') }}"><i class="fa-solid fa-file-arrow-down"></i>CX Customer Care</a></button>
+                <button class="download__btn"><a href="{{ url_for('download_cx_digital_xp') }}"><i class="fa-solid fa-file-arrow-down"></i>CX Digital Experience</a></button>
+                <button class="download__btn"><a href="{{ url_for('download_ex_can_xp') }}"><i class="fa-solid fa-file-arrow-down"></i>EX Candidate Experience</a></button>
+                <button class="download__btn"><a href="{{ url_for('download_ex_em_xp') }}"><i class="fa-solid fa-file-arrow-down"></i>Employee Experience</a></button>
+            </div><br><br>
+            <h2><u>2. Upload a template QSF to the brand of your choice.</u></h2><br>
+            <p>Upload the QSF for the template of your choice to any Qualtrics brand. Take care to not alter the survey format in any manner or the automation will not work.</p><br>
+            <h2><u>3. Generate an anonymous link from your uploaded template survey.</u></h2><br>
+            <p>Navigate to the Qualtrics platform and publish the survey. From there, you can generate an anonymous link in the Distributions tab.</p><br>
+            <h2><u>4. Navigate to the DataIRL tool.</u></h2><br>
+            <p>Type in "datairl.app" in your Chrome browser search bar.</p><br>
+            <h2><u>5. Fill out the form fields.</u></h2><br>
+            <p> Enter in your email, anonymous link, the number of responses you would like generated, and select the corresponding response type from the drop-down.</p><br>
+            <h2><u>6. Submit your request.</u></h2><br>
+            <p>If your request has been successfully submitted, you will receive a confirmation pop-up. When your request is completed, the system will send you a "Request Complete" email to the email provided in the email block of the request.</p><br>
+        </div>
+        <div class="doc__faqs">
+            <h2><u>FAQs</u></h2><br>
+            <p><b>Q: Why does the tool require my email?</b></p>
+            <p>A: We require an email address, so that we can send you an email when your request has completed. We also plan to limit users to 3 response generation requests per day.</p><br>
+            <p><b>Q: I'm having trouble running this tool in my browser, is DataIRL supported on all browsers?</b></p>
+            <p>A: DataIRL is optimized to run on Chrome. Support for other browsers can be expected in the future.</p><br>
+            <p><b>Q: I ran into a bug. How can I report it?</b></p>
+            <p>A:</p><br>
+            <p><b>Q: I think this tool is neat, but I think it could be better. How can I submit feedback to the development team?</b></p>
+            <p>A:</p><br>
+            <p><b>Q: Where can I learn more about the architecture of the tool?</b></p>
+            <p>A:</p><br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

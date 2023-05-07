@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" 
+        content="width=device-width,initial-scale=1" />
+        <title>{% block title %}DataIRL{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <!-- Insert Font Awesome icons source -->
+        <script src="https://kit.fontawesome.com/c5dde306d2.js" crossorigin="anonymous"></script>
+        <!-- Insert Google Fonts (EX: Kumbh Sans Regular and Bold) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+        <script src="static/js/submit.js"></script>
+    </head>
+    <body>
+        <!-- Navbar Section -->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="/" id="navbar__logo"><i class ="fa-solid fa-database"></i>DataIRL</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="{{ url_for('index') }}" class="navbar__links">Home</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="{{ url_for('documentation') }}" class="navbar__links">Documentation</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="{{ url_for('about') }}" class="navbar__links">About</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="{{ url_for('roadmap') }}" class="navbar__links">Roadmap</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="{{ url_for('changelog') }}" class="navbar__links">Changelog</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="{{ url_for('support') }}" class="navbar__links">Support</a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="{{ url_for('feedback') }}" class="button">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </nav> 
+        <!-- Landing Section -->
+        <div class="landing">
+            <div class="landing__container">
+                {% block landing_info %}
+                {% endblock landing_info %}
+            </div>
+        </div>
+        <!-- App Section -->
+        <div class="app">
+            <div class="app__container">
+                <div class="app__content">
+                    {% block app_form %}
+                    {% endblock app_form %}
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section -->
+        <section class="social__media">
+            <div class="social__media--wrap">
+                <div class="footer__logo">
+                    <a href="/" id="footer__logo"><i class="fa-solid 
+                    fa-database"></i>NEXT</a>
+                </div>
+                <p class="website__rights">© NEXT 2020. All rights reserved</p>
+                <div class="social__icons">
+                    <a 
+                        href="/" 
+                        class="social__icon--link" 
+                        target ="_blank">
+                            <i class="fab fa-facebook"></i>
+                    </a>
+                    <a 
+                        href="/" 
+                        class="social__icon--link" 
+                        target ="_blank">
+                            <i class="fab fa-instagram"></i>
+                    </a>
+                    <a 
+                        href="/" 
+                        class="social__icon--link" 
+                        target ="_blank">
+                            <i class="fab fa-twitter"></i>
+                    </a>
+                    <a 
+                        href="/" 
+                        class="social__icon--link" 
+                        target ="_blank">
+                            <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a 
+                        href="/" 
+                        class="social__icon--link" 
+                        target ="_blank">
+                            <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    <!--
+    <script src="app.js"></script> -->
+    </body>
+</html>

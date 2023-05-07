@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}DataIRL{% endblock %}
+
+{% block landing_info %}
+
+<h1>DataIRL is a Qualtrics internal tool designed to improve the creation of qualitative data generation for customer demonstrations</h1>
+
+{% endblock %}
+
+{% block app_form %}
+<form name="app__fields" id="app__form">
+    <label for="corp_email">Email:</label>
+    <input 
+        type="text" 
+        id="corp_email" 
+        name="corp_email_input"
+        required
+        placeholder="Please enter in your email"/>
+    <label for="survey_link">Survey Link:</label>
+    <input 
+        type="text" 
+        id="survey_id" 
+        name="survey_id_input"
+        placeholder="Enter an anonymous link"
+        required/>
+    <label for="numb_of_resp">Number of Responses</label>
+    <input 
+        type="number" 
+        id="numb_of_resp" 
+        name="numb_of_resp_input"
+        placeholder="Enter in a number of responses"
+        required
+        step="5"
+        min="5"
+        max="200"
+        maxlength="3"/>
+    <label for="resp_type">Choose Response Type:</label>
+    <select 
+        id="resp_type" 
+        name="resp_type_select"
+        required>
+        <option value="" selected>--Please Select a Response Type--</option>
+        <option value="cx_cust_care">CX Customer Care</option>
+        <option value="cx_digital_xp">CX Digital Experience</option>
+        <option value="ex_can_xp">EX Candidate Experience</option>
+        <option value="ex_em_xp">EX Employee Experience</option>
+    </select>
+        <!-- <button class="app__btn" id="submit__btn" type="button" onclick="return validateForm()">Submit</button> -->
+        <!-- <button class="app__btn" id="submit__btn" type="button" onclick="return validateForm()"><a href="/">Submit</a></button> -->
+        <button class="app__btn" id="submit__btn" type="button" onclick="return validateForm()"><a>Submit</a></button>
+        <div class="popup" id="popup">
+            <img src="/static/images/success_check.png">
+            <h2>Thank You!</h2>
+            <p>We're working on your request. You'll receive an email when your data has been generated.</p>
+            <button type="button" onclick="closePopup()">Ok</button>
+        </div>
+</form>
+<form id="app__output">
+    <label for="output_box">Ouput:</label>
+    <form action="/action_page.php">
+        <input type="text" id="output" disabled>
+    </form>
+</form>
+<!-- https://www.youtube.com/watch?v=AF6vGYIyV8M -->
+<script>
+
+function validateForm() {
+    let email = document.forms["app__fields"]["corp_email_input"].value;
+    if (email == "") {
+        alert("Please enter in your email");
+        console.log(email)
+        return false;
+    }
+
+    let surveyId = document.forms["app__fields"]["survey_id_input"].value;
+    if (surveyId == "") {
+        alert("Please enter an anonymous link");
+        console.log(surveyId)
+        return false;
+    }
+
+    let numOfResponses = document.forms["app__fields"]["numb_of_resp_input"].value;
+    if (numOfResponses == "") {
+        alert("Please enter a number of responses");
+        console.log(numOfResponses)
+        return false;
+    }
+
+    let responseType = document.forms["app__fields"]["resp_type_select"].value;
+    if (responseType == "") {
+        alert("Please enter a response type");
+        console.log(responseType)
+        return false;
+    }
+    
+    let popup = document.getElementById("popup");
+    popup.classList.add("open-popup");
+    // document.getElementById('submit__btn').setAttribute('disabled', 'disabled');
+    document.getElementById("submit__btn").disabled = true;
+    return false;
+}
+
+function closePopup(){
+    // setTimeout(closePopup, 3000);
+    popup.classList.remove("open-popup");
+    // document.getElementById('submit__btn').removeAttribute('disabled');
+    document.getElementById("submit__btn").disabled = false;
+    document.getElementById("app__form").reset();
+}
+
+</script>
+{% endblock %}

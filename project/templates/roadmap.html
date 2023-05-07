@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% block landing_info %}
+
+<div class="roadmap">
+    <div class="roadmap__content">
+        <h1>Roadmap</h1>
+        <p></p>
+        <h2>High Priority - MVP Requirements</h2>
+        <ul>
+            <li><p>Limit user requests</p></li>
+            <li><p>Configure database</p></li>
+            <li><p>Complete the remaining open-text comment pools</p></li>
+            <li><p>Dockerize the application</p></li>
+            <li><p>Deploy to AWS</p></li>
+            <li><p>Exception errors to submission process</p></li>
+            <li><p>Add survey QSFs as downloadables to the web app</p></li>
+            <li><p>Clean up the web app footer</p></li>
+            <li><p>Create Github repo for the code and documentation</p></li>
+            <li><p>Configure Feedback survey</p></li>
+        </ul><br>
+        <h2>Medium Priority</h2>
+        <ul>
+            <li><p>Success email upon request fulfillment</p></li>
+            <li><p>Sentry error logging</p></li>
+            <li><p>Implement CI/CD</p></li>
+            <li><p>Add the ability to configure sentiment skew via web page slider</p></li>
+            <li><p>Replace Output box with a Lex chatbot</p></li>
+        </ul><br>
+        <h2>Low Priority</h2>
+        <ul>
+            <li><p>Deploy GraphQL APIs</p></li>
+            <li><p>Redesign the frontend in React or Flutter</p></li>
+            <li><p>Clean up Support page</p></li>
+            <li><p>Create an executable that be run on desktop / CLI</p></li>
+        </ul><br>
+    </div>
+</div>
+
+
+{% endblock %}
+
+<div class="documentation">
+    <div class="doc__content">
+        <div class="doc__tutorial">
