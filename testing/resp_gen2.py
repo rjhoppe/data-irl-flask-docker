@@ -7,12 +7,12 @@ from selenium.webdriver.common.action_chains import ActionChains
 import threading
 import time
 import random
-import app
+import main.app2 as app2
 
-respGen = app.RespGen.respGen
-userEmail = app.RespGen.email
-responseType = app.RespGen.responseType
-surveyLink = app.RespGen.surveyLink
+respGen = app2.RespGen.respGen
+userEmail = app2.RespGen.email
+responseType = app2.RespGen.responseType
+surveyLink = app2.RespGen.surveyLink
 respSent = ''
 respGenCount = 0
 

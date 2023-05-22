@@ -65,6 +65,10 @@ exEmpExpPos = ['Test exEmpExpPos']
 
 
 def main(email, surveyLink, respGen, responseType):
+    
+    # Remove after testing DB
+    print('Tesing DB connection')
+    exit()
 
     respGen = int(respGen)
     userEmail = email

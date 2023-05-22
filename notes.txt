@@ -1,0 +1,18 @@
+https://pynative.com/python-sqlite-insert-into-table/
+
+https://www.geeksforgeeks.org/how-to-build-a-web-app-using-flask-and-sqlite-in-python/#
+
+https://flask.palletsprojects.com/en/2.3.x/patterns/sqlite3/
+
+https://pythonbasics.org/flask-sqlite/
+
+
+Install Sentry 
+https://flask.palletsprojects.com/en/2.3.x/errorhandling/
+
+
+Integrate Lex with Python Web app
+https://www.youtube.com/watch?v=aPfrh48sU_U
+
+https://aws.amazon.com/blogs/machine-learning/deploy-a-web-ui-for-your-chatbot/
+
