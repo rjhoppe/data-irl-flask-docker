@@ -16,3 +16,6 @@ https://www.youtube.com/watch?v=aPfrh48sU_U
 
 https://aws.amazon.com/blogs/machine-learning/deploy-a-web-ui-for-your-chatbot/
 
+
+Build Flask Mail client
+https://www.geeksforgeeks.org/sending-emails-using-api-in-flask-mail/#

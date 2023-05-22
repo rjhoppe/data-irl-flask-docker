@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request, json, send_file
+from flask_mail import Mail
 import sqlite3 as sql
 from sqlite3 import Error
 import logging
