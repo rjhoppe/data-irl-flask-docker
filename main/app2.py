@@ -5,6 +5,7 @@ from sqlite3 import Error
 import logging
 import resp_gen as RespGen
 from datetime import date
+import os
 
 logging.basicConfig(filename='record.log', level=logging.DEBUG)
 
@@ -120,4 +121,5 @@ def feedback():
     return
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
