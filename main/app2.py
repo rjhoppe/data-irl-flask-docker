@@ -42,12 +42,12 @@ def index():
             return render_template('index2.html')
         
         try:
-            email =  request.form['corp_email_input']
+            email = request.form['corp_email_input']
             surveyLink = request.form['survey_id_input']
             respGen = request.form['numb_of_resp_input']
             responseType = request.form['resp_type_select']
             # print(email, surveyLink, respGen, responseType)
-             # RespGen.main(email, surveyLink, respGen, responseType)
+            RespGen.main(email, surveyLink, respGen, responseType)
 
             if (email != '') and (surveyLink != '') and (respGen != '') and (responseType != ''):
                 with sql.connect("requests.db") as conn:

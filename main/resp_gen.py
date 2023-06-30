@@ -65,10 +65,6 @@ exEmpExpPos = ['Test exEmpExpPos']
 
 
 def main(email, surveyLink, respGen, responseType):
-    
-    # Remove after testing DB
-    print('Tesing DB connection')
-    exit()
 
     respGen = int(respGen)
     userEmail = email
@@ -102,7 +98,7 @@ def main(email, surveyLink, respGen, responseType):
 
             try:    
                 # Open the browser
-                driver = webdriver.Chrome()
+                driver = webdriver.Chrome(executable_path='/app/main/drivers/chromedriver.exe')
                 driver.get(surveyLink)
                 time.sleep(1)
 
@@ -315,7 +311,8 @@ def main(email, surveyLink, respGen, responseType):
             
             try:    
                 # Open the browser
-                driver = webdriver.Chrome()
+                # Specified the location of the chrome driver so Docker can find it
+                driver = webdriver.Chrome(executable_path='/app/main/drivers/chromedriver.exe')
                 driver.get(surveyLink)
                 time.sleep(1)
 
@@ -495,7 +492,7 @@ def main(email, surveyLink, respGen, responseType):
     
             try:    
                 # Open the browser
-                driver = webdriver.Chrome()
+                driver = webdriver.Chrome(executable_path='/app/main/drivers/chromedriver.exe')
                 driver.get(surveyLink)
                 time.sleep(1)
 
@@ -734,7 +731,7 @@ def main(email, surveyLink, respGen, responseType):
 
             try:    
                 # Open the browser
-                driver = webdriver.Chrome()
+                driver = webdriver.Chrome(executable_path='/app/main/drivers/chromedriver.exe')
                 driver.get(surveyLink)
                 time.sleep(1)
 

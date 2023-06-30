@@ -19,3 +19,9 @@ https://aws.amazon.com/blogs/machine-learning/deploy-a-web-ui-for-your-chatbot/
 
 Build Flask Mail client
 https://www.geeksforgeeks.org/sending-emails-using-api-in-flask-mail/#
+
+Selenium Chrome Driver Warning
+https://stackoverflow.com/questions/71191801/selenium-common-exceptions-webdriverexception-message-chromedriver-executabl
+
+Thread about installing Chrome on Docker for Selenium
+https://stackoverflow.com/questions/70955307/how-to-install-google-chrome-in-a-docker-container
