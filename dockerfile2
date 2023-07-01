@@ -1,0 +1,34 @@
+FROM selenium/standalone-chrome
+# RUN apt-get -y update && apt-get -y upgrade
+# RUN apt-get -y install wget
+# RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&\
+#     apt-get -y install ./google-chrome-stable_current_amd64.deb
+
+RUN sudo apt-get -y update && sudo apt-get -y upgrade
+RUN sudo apt -f install -y
+RUN sudo apt-get install -y wget
+
+# Install Google Chrome
+RUN sudo wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN sudo apt-get install ./google-chrome-stable_current_amd64.deb -y
+RUN sudo wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tar.xz\
+    sudo tar -xf Python-3.11.1.tar.xz\
+    cd Python-3.11.1\
+    sudo ./configure --enable-optimizations\
+    sudo make altinstall
+RUN sudo apt-get -y install nano
+
+# set the working directory
+WORKDIR /app
+
+# install dependencies
+COPY ./requirements.txt /app
+RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
+
+# copy the scripts to the folder
+COPY . /app
+RUN chmod a+x main/docker_entry.sh
+
+# start the server
+# ENTRYPOINT [ "python" ]
+CMD main/docker_entry.sh

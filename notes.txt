@@ -25,3 +25,20 @@ https://stackoverflow.com/questions/71191801/selenium-common-exceptions-webdrive
 
 Thread about installing Chrome on Docker for Selenium
 https://stackoverflow.com/questions/70955307/how-to-install-google-chrome-in-a-docker-container
+
+Idea on How to Install Chrome Driver
+https://stackoverflow.com/questions/48463976/how-can-i-run-selenium-chrome-driver-in-a-docker-container
+
+Docker Selenium IMAGE
+https://www.swtestacademy.com/docker-selenium-tutorial/
+
+Configure Selenium on Linux Docker Guide
+https://nander.cc/using-selenium-within-a-docker-container
+https://qxf2.com/blog/preparing-a-docker-image-for-running-selenium-tests/
+https://stackoverflow.com/questions/73178946/running-a-seleniumpython-based-app-in-docker
+
+
+https://swimburger.net/blog/powershell/download-the-right-chromedriver-on-windows-linux-macos-using-powershell
+
+Install latest Chrome driver release
+https://gist.github.com/mikesmullin/2636776

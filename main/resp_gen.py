@@ -1,8 +1,12 @@
+from selenium.webdriver.chrome.options import Options
+#
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.action_chains import ActionChains
+
 #from collections import Counter
 import threading
 import time
@@ -98,7 +102,16 @@ def main(email, surveyLink, respGen, responseType):
 
             try:    
                 # Open the browser
-                driver = webdriver.Chrome(executable_path='/app/main/drivers/chromedriver.exe')
+                # driver = webdriver.Chrome()
+                # Remove below for internal testing, uncomment line above
+                options = Options()
+                options.add_argument("--headless=new")
+                options.add_argument("--disable-dev-shm-usage")
+                options.add_argument("--no-sandbox")
+                options.add_argument('--disable-gpu')
+                options.add_argument("--disable-extensions")
+                service = Service('/app/main/drivers/chromedriver')
+                driver = webdriver.Chrome(service=service, options=options)
                 driver.get(surveyLink)
                 time.sleep(1)
 
@@ -312,6 +325,7 @@ def main(email, surveyLink, respGen, responseType):
             try:    
                 # Open the browser
                 # Specified the location of the chrome driver so Docker can find it
+                # driver = webdriver.Chrome()
                 driver = webdriver.Chrome(executable_path='/app/main/drivers/chromedriver.exe')
                 driver.get(surveyLink)
                 time.sleep(1)
@@ -492,6 +506,7 @@ def main(email, surveyLink, respGen, responseType):
     
             try:    
                 # Open the browser
+                # driver = webdriver.Chrome()
                 driver = webdriver.Chrome(executable_path='/app/main/drivers/chromedriver.exe')
                 driver.get(surveyLink)
                 time.sleep(1)
@@ -731,6 +746,7 @@ def main(email, surveyLink, respGen, responseType):
 
             try:    
                 # Open the browser
+                # driver = webdriver.Chrome()
                 driver = webdriver.Chrome(executable_path='/app/main/drivers/chromedriver.exe')
                 driver.get(surveyLink)
                 time.sleep(1)

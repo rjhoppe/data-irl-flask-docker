@@ -8,11 +8,11 @@ with open('main/schema.sql') as f:
 cur = connection.cursor()
 
 cur.execute("INSERT INTO requests (email, surveyurl, respGen, responseType) VALUES (?, ?, ?, ?)",
-            ('email', 'www.qualtrics.com/SV_73243092sdjhbgf', '5', 'CX Customer Experience')
+            ('email', 'www.qualtrics.com/SV_73243092sdjhbgf', '5', 'cx_customer_care')
             )
 
 cur.execute("INSERT INTO requests (email, surveyurl, respGen, responseType) VALUES (?, ?, ?, ?)",
-            ('email', 'www.qualtrics.com/SV_73243092sdjhbgf', '5', 'CX Digital Experience')
+            ('email', 'www.qualtrics.com/SV_73243092sdjhbgf', '5', 'cx_digital_xp')
             )
 
 connection.commit()

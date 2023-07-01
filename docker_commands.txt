@@ -1,5 +1,6 @@
 docker run -p 5000:5000 -d datairl:latest
 
 docker build -t datairl .
+docker build -t datairl-ubu .
 
- docker rmi -f [IMAGE ID]
+docker rmi -f [IMAGE ID]
